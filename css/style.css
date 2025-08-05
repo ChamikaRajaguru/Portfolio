@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px; /* Adjust padding as needed */
+  background-color: #1a202c; /* A dark blue-gray color similar to the image background */
+  color: #fff;
+  font-family: Arial, sans-serif; /* Or any other sans-serif font */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Adjust spacing between links */
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #4a90e2; /* A light blue for hover effect */
+}
