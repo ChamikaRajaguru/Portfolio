@@ -475,3 +475,88 @@ html {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+
+/* ======================== */
+/* Certificates Section */
+/* ======================== */
+
+.certificates-section {
+    text-align: center;
+}
+
+.certificates-intro {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #d1d5db;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.certificate-card {
+    background-color: #161b22;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: scale(1.05) translateY(-5px); /* Lift and scale effect on hover */
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+.certificate-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.certificate-card-body {
+    padding: 1.5rem;
+}
+
+.certificate-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.certificate-issuer {
+    margin-top: 0.5rem;
+    color: #d1d5db;
+    font-style: italic;
+}
+
+.certificate-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #818cf8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.certificate-link:hover {
+    text-decoration: underline;
+}
+
+/* ======================== */
+/* Media Queries (Responsive Design) */
+/* ======================== */
+
+@media (min-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .certificates-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
