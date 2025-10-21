@@ -102,63 +102,37 @@ function App() {
       </nav>
 
       {/* Home Section */}
-      <section id="home" className="min-h-screen flex items-center bg-black-dark">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Text Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <span className="text-4xl font-bold">Hello.</span>
-                <div className="w-3 h-3 bg-purple-light rounded-full animate-pulse"></div>
-              </div>
-              <h1 className="text-6xl md:text-8xl font-bold">
-                I'm <span className="text-purple-light">Chamika</span>
+      <section id="home" className="hero-section">
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1 className="hero-title">
+                Hi, I am <br />
+                <span className="hero-name">Chamika,</span>
               </h1>
-              <p className="text-3xl md:text-4xl text-gray-300">
-                Full Stack Developer
+              <p className="hero-description">
+                Welcome to my portfolio! Chamika Rajaguru is an Experienced Full Stack Developer with a passion for creating visually stunning and intuitive web experiences. With a unique blend of technical skills and creative flair, there's confidence in the ability to deliver custom solutions to various project requirements.
               </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="bg-purple-light text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-dark transition-all duration-300 transform hover:scale-105"
-              >
-                Got a project?
-              </button>
-              <button
-                onClick={() => window.open('mailto:chamikasrajaguru@gmail.com')}
-                className="border-2 border-purple-light text-purple-light px-8 py-4 rounded-lg font-semibold hover:bg-purple-light hover:text-white transition-all duration-300"
-              >
-                My resume
-              </button>
-            </div>
-          </div>
-
-          {/* Right Side - Profile Image */}
-          <div className="relative flex justify-center">
-            <div className="relative">
-              {/* Decorative chevrons */}
-              <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 text-purple-light opacity-60">
-                <FaChevronLeft className="text-4xl" />
+              <div className="hero-buttons">
+                <button className="hero-button primary" onClick={() => window.open('mailto:chamikasrajaguru@gmail.com')}>
+                  Resume
+                </button>
+                <button className="hero-button secondary" onClick={() => scrollToSection('contact')}>
+                  Contact Me
+                </button>
               </div>
-              <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 text-purple-light opacity-60">
-                <FaChevronRight className="text-4xl" />
+              <div className="scroll-indicator">
+                <span>Scroll Down</span>
+                <div className="scroll-arrow">↓</div>
               </div>
-              
-              {/* Profile image with glowing ring */}
-              <div className="relative">
-                <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-dark to-purple-light p-2 shadow-2xl">
-                  <div className="w-full h-full rounded-full bg-black-dark flex items-center justify-center overflow-hidden">
-                    <img 
-                      src="https://via.placeholder.com/300x300/6B46C1/FFFFFF?text=CR" 
-                      alt="Chamika Rajaguru" 
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                </div>
-                {/* Glowing effect */}
-                <div className="absolute inset-0 rounded-full bg-purple-light opacity-20 blur-xl animate-pulse"></div>
+            </div>
+            <div className="hero-image-container">
+              <div className="intro-image">
+                <img 
+                  src="https://via.placeholder.com/400x500/6B46C1/FFFFFF?text=CR" 
+                  alt="Chamika Rajaguru" 
+                  className="hero-image"
+                />
               </div>
             </div>
           </div>
@@ -166,78 +140,106 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 bg-black-light">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-6 text-lg">
-            {['HTML', 'CSS', 'JavaScript', 'Node.js', 'React', 'MongoDB', 'Express.js', 'Tailwind CSS'].map((skill, index) => (
-              <span key={index} className="text-gray-300 hover:text-purple-light transition-colors duration-300">
-                {skill}
-              </span>
-            ))}
+      <section id="skills" className="skills-section">
+        <div className="skills-container">
+          <h2 className="skills-title">Skills</h2>
+          
+          <div className="skills-grid">
+            <div className="skill-category">
+              <h3 className="category-title">Programming Skills</h3>
+              <div className="skill-tags">
+                <span className="skill-tag">MongoDB</span>
+                <span className="skill-tag">Express.js</span>
+                <span className="skill-tag">React.js</span>
+                <span className="skill-tag">Node.js</span>
+                <span className="skill-tag">JavaScript</span>
+                <span className="skill-tag">Python</span>
+                <span className="skill-tag">Next.js</span>
+                <span className="skill-tag">TypeScript</span>
+                <span className="skill-tag">HTML</span>
+                <span className="skill-tag">CSS</span>
+              </div>
+            </div>
+            
+            <div className="skill-category">
+              <h3 className="category-title">Tools & Other Skills</h3>
+              <div className="skill-tags">
+                <span className="skill-tag">UI/UX</span>
+                <span className="skill-tag">Git</span>
+                <span className="skill-tag">Docker</span>
+                <span className="skill-tag">DevOps</span>
+              </div>
+            </div>
+            
+            <div className="skill-category">
+              <h3 className="category-title">Communication Skills</h3>
+              <div className="skill-tags">
+                <span className="skill-tag">Sinhala</span>
+                <span className="skill-tag">English</span>
+                <span className="skill-tag">Tamil</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-black-dark">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            {/* Left Column - Services */}
-            <div className="space-y-8">
-              <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-black-light transition-colors duration-300">
-                <div className="w-12 h-12 bg-purple-light rounded-lg flex items-center justify-center">
-                  <FaCode className="text-white text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white">Website Development</h3>
-                  <p className="text-gray-400">Custom web applications</p>
+      <section id="about" className="about-section">
+        <div className="about-container">
+          <div className="about-header">
+            <h2 className="about-title">About Me</h2>
+            <div className="about-stats">
+              <div className="stat-item">
+                <div className="stat-icon">💼</div>
+                <div className="stat-content">
+                  <div className="stat-number">02</div>
+                  <div className="stat-label">Years Job Experience</div>
                 </div>
               </div>
-              
-              <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-black-light transition-colors duration-300">
-                <div className="w-12 h-12 bg-purple-light rounded-lg flex items-center justify-center">
-                  <FaServer className="text-white text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white">App Development</h3>
-                  <p className="text-gray-400">Full-stack applications</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-black-light transition-colors duration-300">
-                <div className="w-12 h-12 bg-purple-light rounded-lg flex items-center justify-center">
-                  <FaDatabase className="text-white text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white">Database Management</h3>
-                  <p className="text-gray-400">MongoDB & SQL databases</p>
+              <div className="stat-item">
+                <div className="stat-icon">🚀</div>
+                <div className="stat-content">
+                  <div className="stat-number">08+</div>
+                  <div className="stat-label">Projects Completed</div>
                 </div>
               </div>
             </div>
-
-            {/* Right Column - About Me */}
-            <div className="space-y-8">
-              <h2 className="text-5xl font-bold text-white">About me</h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate Full Stack Web Developer with expertise in modern web technologies. 
-                I love creating efficient, scalable applications that provide great user experiences. 
-                With a strong foundation in both frontend and backend development, I enjoy the entire 
-                process of bringing ideas to life through code.
+          </div>
+          
+          <div className="about-content">
+            <div className="about-text">
+              <h3 className="about-subtitle">What are my strongest sides and skills?</h3>
+              <p className="about-description">
+                One of my strongest qualities as a full stack developer is my ability to think critically and solve problems. I excel at breaking down complex projects into manageable chunks and coming up with innovative solutions to problems that arise. I am also very organized and detail-oriented, which allows me to complete assignments on time and to the highest standards.
               </p>
-              
-              {/* Statistics */}
-              <div className="grid grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-light mb-2">50+</div>
-                  <div className="text-sm text-gray-400">Completed Projects</div>
+              <p className="about-description">
+                As a full stack developer, I am proficient in a variety of programming languages and frameworks, including HTML, CSS, JavaScript, and Python. I have experience working with popular technologies such as MongoDB, Express, React, and Node.js, and am skilled in UI/UX development as well as I have the ability to quickly adapt to new technologies and frameworks. I have a wide range of knowledge about technologies beyond those mentioned.
+              </p>
+              <p className="about-description">
+                I am also a strong communicator and able to effectively collaborate with clients and team members to understand their needs and translate them into functional specifications. Overall, I am confident in my ability to deliver high-quality web solutions that meet the needs of my clients and exceed their expectations.
+              </p>
+            </div>
+            
+            <div className="about-bio">
+              <h3 className="bio-title">Biography, a few words</h3>
+              <div className="bio-content">
+                <div className="bio-image">
+                  <img 
+                    src="https://via.placeholder.com/200x250/6B46C1/FFFFFF?text=CR" 
+                    alt="Chamika Rajaguru" 
+                    className="photo-bio"
+                  />
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-light mb-2">100%</div>
-                  <div className="text-sm text-gray-400">Client satisfaction</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-light mb-2">3+</div>
-                  <div className="text-sm text-gray-400">Years of experience</div>
+                <div className="bio-text">
+                  <p>
+                    Hi, I'm Chamika Rajaguru, a full-stack developer from Sri Lanka. I am currently an undergraduate at NSBM Green University, where I am developing a solid foundation in software engineering and a passion for building aesthetically attractive and intuitive web experiences. With a strong track record of achievement, I am committed to using my skills and expertise to create innovative and effective solutions for my clients.
+                  </p>
+                  <p>
+                    I am an active member of the FOSS community and Media club of NSBM and am known for my broad range of knowledge and interests. I am constantly seeking out new opportunities to improve my skills and knowledge.
+                  </p>
+                  <p>
+                    In my free time, I enjoy hobbies such as photography, watching movies, and traveling. I am also an avid learner and am always looking for ways to improve my skills and knowledge. In addition to my technical skills, I am a reliable and team-oriented individual who is always ready to collaborate with team members and clients to ensure that projects are delivered to the highest standards. I am excited to work with you and create something amazing together.
+                  </p>
                 </div>
               </div>
             </div>
@@ -246,50 +248,31 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-black-light">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-16 text-white">Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section id="projects" className="projects-section">
+        <div className="projects-container">
+          <h2 className="projects-title">Projects</h2>
+          <div className="projects-grid">
             {[
               {
                 title: 'E-Commerce Platform',
-                description: 'Full-stack e-commerce application with React frontend and Node.js backend',
-                tech: ['React', 'Node.js', 'MongoDB', 'Express.js'],
-                image: 'https://via.placeholder.com/400x250/6B46C1/FFFFFF?text=E-Commerce'
+                description: 'Full-stack e-commerce application with React frontend and Node.js backend'
               },
               {
                 title: 'Task Management App',
-                description: 'Real-time task management application with user authentication',
-                tech: ['React', 'MongoDB', 'Express.js', 'Socket.io'],
-                image: 'https://via.placeholder.com/400x250/A855F7/FFFFFF?text=Task+Manager'
+                description: 'Real-time task management application with user authentication'
               },
               {
                 title: 'Portfolio Website',
-                description: 'Responsive portfolio website with modern design and animations',
-                tech: ['React', 'Tailwind CSS', 'JavaScript'],
-                image: 'https://via.placeholder.com/400x250/6B46C1/FFFFFF?text=Portfolio'
+                description: 'Responsive portfolio website with modern design and animations'
               }
             ].map((project, index) => (
-              <div key={index} className="bg-black-dark rounded-lg overflow-hidden shadow-lg hover:shadow-xl hover:shadow-purple-dark/20 transition-all duration-300 transform hover:scale-105">
-                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-purple-light">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-purple-dark/20 text-purple-light px-3 py-1 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex space-x-4">
-                    <button className="bg-purple-dark text-white px-4 py-2 rounded-lg hover:bg-purple-light transition-colors duration-300">
-                      View Project
-                    </button>
-                    <button className="border border-purple-light text-purple-light px-4 py-2 rounded-lg hover:bg-purple-light hover:text-white transition-colors duration-300">
-                      Source Code
-                    </button>
-                  </div>
+              <div key={index} className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder"></div>
+                </div>
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
                 </div>
               </div>
             ))}
@@ -297,69 +280,124 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-black-dark">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-5xl font-bold mb-16 text-white">Contact</h2>
-          <p className="text-xl text-gray-300 mb-12">
-            I'm always interested in new opportunities and exciting projects. Let's connect!
-          </p>
+      {/* Milestones Section */}
+      <section id="milestones" className="milestones-section">
+        <div className="milestones-container">
+          <h2 className="milestones-title">Special Milestones</h2>
           
-          <div className="bg-black-light rounded-2xl p-8 mb-12">
-            <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-purple-dark rounded-full flex items-center justify-center">
-                  <FaEnvelope className="text-white text-xl" />
-                </div>
-                <div className="text-left">
-                  <p className="text-gray-400 text-sm">Email</p>
-                  <a 
-                    href="mailto:chamikasrajaguru@gmail.com" 
-                    className="text-purple-light hover:text-purple-dark transition-colors duration-300"
-                  >
-                    chamikasrajaguru@gmail.com
+          <div className="milestones-timeline">
+            <div className="milestone-item">
+              <div className="milestone-date">13th February, 2024</div>
+              <div className="milestone-content">
+                <h3 className="milestone-title">Full Stack Developer</h3>
+                <p className="milestone-company">HashX</p>
+                <p className="milestone-description">
+                  HashX is dedicated to offering robust cybersecurity capabilities, safeguarding digital assets with advanced technologies. Moreover, HashX proudly presents Sri Lanka's No #1 CTF platform, providing a space to host competitive inter university CTF competitions.
+                </p>
+              </div>
+            </div>
+            
+            <div className="milestone-item">
+              <div className="milestone-date">13th October, 2022</div>
+              <div className="milestone-content">
+                <h3 className="milestone-title">BSc (Hons) in Software Engineering (Undergraduate)</h3>
+                <p className="milestone-company">NSBM Green University</p>
+                <p className="milestone-description">
+                  Pursuing BSc (Hons) in Software Engineering at NSBM Green University, Chamika Rajaguru focuses on mastering front-end and back-end technologies blending theoretical knowledge with a strong emphasis on key software development principles.
+                </p>
+              </div>
+            </div>
+            
+            <div className="milestone-item">
+              <div className="milestone-date">October, 2020</div>
+              <div className="milestone-content">
+                <h3 className="milestone-title">G.C.E. (A/L) Examination</h3>
+                <p className="milestone-company">School : V/Agrabodhi M.V</p>
+                <p className="milestone-description">
+                  Passed the Sri Lankan Advanced Level (A-Level) Examination. This qualification, similar to the British Advanced Level and this is a gateway to Sri Lankan state universities, offered in Sinhala, Tamil, and English. Conducted by the Ministry of Education Sri Lanka.
+                </p>
+              </div>
+            </div>
+            
+            <div className="milestone-item">
+              <div className="milestone-date">December, 2017</div>
+              <div className="milestone-content">
+                <h3 className="milestone-title">G.C.E. (O/L) Examination</h3>
+                <p className="milestone-company">School : V/Agrabodhi M.V</p>
+                <p className="milestone-description">
+                  Passed the Sri Lankan Ordinary Level (O-Level) Examination at V/Agrabodhi M.V, a GCE qualification similar to the Cambridge University Ordinary Level and proof of completion Secondary Education. Conducted by the Ministry of Education Sri Lanka.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="contact-section">
+        <div className="contact-container">
+          <h2 className="contact-title">Contact</h2>
+          <h3 className="contact-subtitle">Call or write anytime</h3>
+          
+          <form className="contact-form">
+            <div className="form-group">
+              <input type="text" placeholder="Full Name" className="form-input" />
+            </div>
+            <div className="form-group">
+              <input type="email" placeholder="E-Mail Address" className="form-input" />
+            </div>
+            <div className="form-group">
+              <textarea placeholder="Message" className="form-textarea" rows="5"></textarea>
+            </div>
+            <button type="submit" className="form-submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-content">
+            <div className="footer-section">
+              <h4 className="footer-title">Quick Links</h4>
+              <ul className="footer-links">
+                <li><a href="#home" onClick={() => scrollToSection('home')}>Home</a></li>
+                <li><a href="#about" onClick={() => scrollToSection('about')}>About</a></li>
+                <li><a href="#skills" onClick={() => scrollToSection('skills')}>Skills</a></li>
+                <li><a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a></li>
+                <li><a href="#milestones" onClick={() => scrollToSection('milestones')}>Milestones</a></li>
+                <li><a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-section">
+              <h4 className="footer-title">Support</h4>
+              <ul className="footer-links">
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookie preferences</a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-section">
+              <h4 className="footer-title">Get in touch</h4>
+              <div className="footer-contact">
+                <p>chamikasrajaguru@gmail.com</p>
+                <div className="footer-social">
+                  <a href="https://github.com/chamika-rajaguru" target="_blank" rel="noopener noreferrer">
+                    <FaGithub />
+                  </a>
+                  <a href="https://linkedin.com/in/chamika-rajaguru" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin />
                   </a>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="flex justify-center space-x-8 mb-12">
-            <a 
-              href="https://github.com/chamika-rajaguru" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-16 h-16 bg-black-light rounded-full flex items-center justify-center text-purple-light hover:bg-purple-light hover:text-white transition-all duration-300 transform hover:scale-110"
-            >
-              <FaGithub className="text-2xl" />
-            </a>
-            <a 
-              href="https://linkedin.com/in/chamika-rajaguru" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-16 h-16 bg-black-light rounded-full flex items-center justify-center text-purple-light hover:bg-purple-light hover:text-white transition-all duration-300 transform hover:scale-110"
-            >
-              <FaLinkedin className="text-2xl" />
-            </a>
+          
+          <div className="footer-bottom">
+            <p>Copyright © 2020-2024 | All rights reserved. Made with❤ by Chamika Rajaguru</p>
           </div>
-
-          <div className="text-center">
-            <button 
-              onClick={() => window.open('mailto:chamikasrajaguru@gmail.com')}
-              className="bg-gradient-to-r from-purple-dark to-purple-light px-8 py-4 rounded-full text-white font-semibold text-lg hover:shadow-lg hover:shadow-purple-dark/50 transition-all duration-300 transform hover:scale-105"
-            >
-              Send Me an Email
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black-light py-8 border-t border-purple-dark/20">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            © 2024 Chamika Rajaguru. Built with React and Tailwind CSS.
-          </p>
         </div>
       </footer>
     </div>
